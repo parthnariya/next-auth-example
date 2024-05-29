@@ -53,7 +53,11 @@ const LoginForm = () => {
       showSocials
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(submitHandler)} className="space-y-6">
+        <form
+          noValidate
+          onSubmit={form.handleSubmit(submitHandler)}
+          className="space-y-6"
+        >
           <div className="space-y-4">
             <FormField
               control={form.control}
@@ -92,8 +96,8 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <FormError message={""} />
-          <FormSuccess message="" />
+          <FormError message={error} />
+          <FormSuccess message={success} />
           <Button type="submit" className="w-full" disabled={isPending}>
             Login
           </Button>

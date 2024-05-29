@@ -4,6 +4,7 @@ import { WithChildren } from "@/lib/types";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Header } from "./header";
 import { Social } from "./social";
+import { BackButton } from "./back-button";
 
 interface PropsType extends WithChildren {
   headerLabel: string;
@@ -30,6 +31,9 @@ function CardWrapper({
           <Social />
         </CardFooter>
       )}
+      <CardFooter>
+        <BackButton href={backButtonHref} label={backButtonLabel} />
+      </CardFooter>
     </Card>
   );
 }
